@@ -23,37 +23,65 @@ const text = [
 ]
 
 
-let contatore = 0;
+// let contatore = 0;
+// const boxLeft = document.getElementById('box-left');
+// const sliderRight = document.getElementById('slider-right');
 
-for( let i = 0; i < 5; i++){
-  console.log(items[i]);
+// for(let i = 0; i < items.length; i++){
+//   console.log(items[i]);
 
-  //creo dei div per ogni singolo elemento
-  const sliderLeft = document.createElement('div');
-  const boxImgSmall = document.createElement('div');
-  const layover = document.createElement('div');
+//   //creo dei div per ogni singolo elemento
 
-  // aggiungo la classi di defoult
-  sliderLeft.className = 'slider-left';
-  boxImgSmall.className = 'box-img-small';
-  layover.className = 'layover';
+//   // const boxImgSmall = document.createElement('div');
+//   // const layover = document.createElement('div');
+
+//   // aggiungo la classi di defoult
+//   // sliderLeft.className = 'slider-left';
+//   // boxImgSmall.className = 'box-img-small';
   
-  sliderLeft.innerHTML = `
-  <img src="${items[i]}" alt="">
-  <div class="text-container">
-    <h3 class="">${title[i]}</h3>
-    <p class="">${text[i]}</p>
-  </div>
-  `;
-  boxImgSmall.innerHTML = `
-  <img class="" src="${items[i]}" alt="">
-  <div class="layover ${i}"></div>
-  `;
+//   boxLeft.innerHTML = `
+//   <div id="sliderLeft" class="slider-left ${i}">
+//     <img src="${items[i]}" alt="">
+//     <div class="text-container">
+//       <h3 class="">${title[i]}</h3>
+//       <p class="">${text[i]}</p>
+//     </div>
+//   </div>
+//   `;
   
-  if(i = contatore){
-    sliderLeft.classList.add('active');
-    layover.classList.add('active');
-  }
+//   // sliderRight.innerHTML = `
+//   // <div id="box-img-small" class="box-img-small ${i}">
+//   //   <img src="${items[i]}" alt="">
+//   //   <div id="layover"  class="layover ${i}"></div>
+//   // </div>
+//   // `;
 
-  console.log(sliderLeft);
-}
+
+  
+//   if(i == contatore){
+//     sliderLeft.classList.add('active');
+//     // layover.classList.add('active');
+//   }
+
+
+
+
+// }
+
+// for(let i = 0; i < items.length; i++){
+//   console.log(items[i]);
+
+//   sliderRight.innerHTML = `
+//   <div id="box-img-small" class="box-img-small ${i}">
+//     <img src="${items[i]}" alt="">
+//     <div id="layover"  class="layover ${i}"></div>
+//   </div>
+//   `;
+
+//   if(i == contatore){
+//     layover.classList.add('active');
+//   }
+
+//   console.log(sliderRight);
+
+// }
