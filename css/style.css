@@ -20,8 +20,23 @@
 .slider-left{
   width: 86.7%;
   height: 100%;
-  background-color: blue;
+  position: relative;
 }
+.slider-left img{
+  height: 100%;
+  width: 100%;
+  object-fit: cover;
+}
+.text-container{
+  position: absolute;
+  bottom: 20px;
+  right: 20px;
+}
+h3.active, p.active{
+  color: white;
+  text-align: right;
+}
+
 .slider-right{
   width: 13.4%;
   height: 100%;
