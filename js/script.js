@@ -23,6 +23,26 @@ const text = [
 ]
 
 
+let contatore = 0;
+const arrowTop = document.querySelector('.fa-chevron-up');
+const arrowBottom = document.querySelector('.fa-chevron-down');
+const sliderLeft = document.getElementById('slider-left');
+
+arrowTop.addEventListener('click', function(){
+  console.log('contatore', contatore);
+  sliderLeft[contatore].classList.remove('active');
+
+  contatore--;
+
+  if(contatore < 0) contatore = items.length -1;
+  sliderLeft[contatore].classList.add('active');
+});
+
+
+
+
+
+
 // let contatore = 0;
 // const boxLeft = document.getElementById('box-left');
 // const sliderRight = document.getElementById('slider-right');
