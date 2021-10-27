@@ -17,10 +17,17 @@
   display: flex;
   justify-content: start;
 }
+.slider-left.active{
+  width: 86.7%;
+  height: 100%;
+  position: relative;
+  display: block;
+}
 .slider-left{
   width: 86.7%;
   height: 100%;
   position: relative;
+  display: none;
 }
 .slider-left img{
   height: 100%;
@@ -32,10 +39,17 @@
   bottom: 20px;
   right: 20px;
 }
+h3, p{
+  color: white;
+  text-align: right;
+  display: none;
+}
 h3.active, p.active{
   color: white;
   text-align: right;
+  display: block;
 }
+
 
 .slider-right{
   width: 13.4%;
