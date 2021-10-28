@@ -22,31 +22,9 @@ const text = [
   'Et temporibus voluptatum suscipit tempore aliquid deleniti aut veniam inventore eligendi ex ad ullam,',
 ]
 
-
-// let contatore = 0;
-// const arrowTop = document.querySelector('.fa-chevron-up');
-// const arrowBottom = document.querySelector('.fa-chevron-down');
-// const boxLeft = document.getElementById('box-left');
-
-//  arrowTop.addEventListener('click', function(){
-    
-//   const sliderLeft = document.createElement('div');
-//   sliderLeft.className('slider-left')
-
-//   contatore--;
-
-//   if(contatore < 0) contatore = items.length -1;
-//   sliderLeft[contatore].classList.add('active');
-// });
-
-
-
-
-
-
 let contatore = 0;
 const boxLeft = document.getElementById('box-left');
-const sliderRight = document.getElementById('slider-right');
+const sliderRight = document.querySelector('.slider-right');
 
 for(let i = 0; i < items.length; i++){
   console.log(items[i]);
@@ -83,20 +61,30 @@ for(let i = 0; i < items.length; i++){
   }
 }
 
-// for(let i = 0; i < items.length; i++){
-//   console.log(items[i]);
 
-//   sliderRight.innerHTML = `
-//   <div id="box-img-small" class="box-img-small ${i}">
-//     <img src="${items[i]}" alt="">
-//     <div id="layover"  class="layover ${i}"></div>
-//   </div>
-//   `;
+const arrowTop = document.querySelector('.fa-chevron-up');
+const arrowBottom = document.querySelector('.fa-chevron-down');
+const sliderLefts = document.getElementsByClassName('slider-left');
+const layovers = document.getElementsByClassName('layover');
 
-//   if(i == contatore){
-//     layover.classList.add('active');
-//   }
+arrowTop.addEventListener('click', function(){
+  sliderLefts[contatore].classList.remove('active');
+  layovers[contatore].classList.remove('active');
 
-//   console.log(sliderRight);
+  contatore--;
+  if(contatore < 0) contatore = items.length - 1;
 
-// }
+  sliderLefts[contatore].classList.add('active');
+  layovers[contatore].classList.add('active');
+});
+
+arrowBottom.addEventListener('click', function(){
+  sliderLefts[contatore].classList.remove('active');
+  layovers[contatore].classList.remove('active');
+
+  contatore++;
+  if(contatore > items.length - 1) contatore = 0;
+
+  sliderLefts[contatore].classList.add('active');
+  layovers[contatore].classList.add('active');
+});
