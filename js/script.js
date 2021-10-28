@@ -23,70 +23,65 @@ const text = [
 ]
 
 
-let contatore = 0;
-const arrowTop = document.querySelector('.fa-chevron-up');
-const arrowBottom = document.querySelector('.fa-chevron-down');
-const sliderLeft = document.getElementById('slider-left');
-
-arrowTop.addEventListener('click', function(){
-  console.log('contatore', contatore);
-  sliderLeft[contatore].classList.remove('active');
-
-  contatore--;
-
-  if(contatore < 0) contatore = items.length -1;
-  sliderLeft[contatore].classList.add('active');
-});
-
-
-
-
-
-
 // let contatore = 0;
+// const arrowTop = document.querySelector('.fa-chevron-up');
+// const arrowBottom = document.querySelector('.fa-chevron-down');
 // const boxLeft = document.getElementById('box-left');
-// const sliderRight = document.getElementById('slider-right');
 
-// for(let i = 0; i < items.length; i++){
-//   console.log(items[i]);
+//  arrowTop.addEventListener('click', function(){
+    
+//   const sliderLeft = document.createElement('div');
+//   sliderLeft.className('slider-left')
 
-//   //creo dei div per ogni singolo elemento
+//   contatore--;
 
-//   // const boxImgSmall = document.createElement('div');
-//   // const layover = document.createElement('div');
+//   if(contatore < 0) contatore = items.length -1;
+//   sliderLeft[contatore].classList.add('active');
+// });
 
-//   // aggiungo la classi di defoult
-//   // sliderLeft.className = 'slider-left';
-//   // boxImgSmall.className = 'box-img-small';
+
+
+
+
+
+let contatore = 0;
+const boxLeft = document.getElementById('box-left');
+const sliderRight = document.getElementById('slider-right');
+
+for(let i = 0; i < items.length; i++){
+  console.log(items[i]);
+
+  const sliderLeft = document.createElement('div');
+  sliderLeft.className = 'slider-left';
   
-//   boxLeft.innerHTML = `
-//   <div id="sliderLeft" class="slider-left ${i}">
-//     <img src="${items[i]}" alt="">
-//     <div class="text-container">
-//       <h3 class="">${title[i]}</h3>
-//       <p class="">${text[i]}</p>
-//     </div>
-//   </div>
-//   `;
-  
-//   // sliderRight.innerHTML = `
-//   // <div id="box-img-small" class="box-img-small ${i}">
-//   //   <img src="${items[i]}" alt="">
-//   //   <div id="layover"  class="layover ${i}"></div>
-//   // </div>
-//   // `;
-
+  const boxImgSmall = document.createElement('div');
+  boxImgSmall.className = 'box-img-small';
 
   
-//   if(i == contatore){
-//     sliderLeft.classList.add('active');
-//     // layover.classList.add('active');
-//   }
+  sliderLeft.innerHTML = `
+    <img src="${items[i]}" alt="">
+    <div class="text-container">
+      <h3 class="active">${title[i]}</h3>
+      <p class="active">${text[i]}</p>
+    </div>
+  `;
+  
+  boxImgSmall.innerHTML = `
+    <img class="" src="${items[i]}" alt="">
+    <div class="layover ${i}"></div>
+  `;
 
+  boxLeft.append(sliderLeft);
+  sliderRight.append(boxImgSmall);
 
+  const layover = document.querySelector('.layover');
 
-
-// }
+  
+  if(i == contatore){
+    sliderLeft.classList.add('active');
+    layover.classList.add('active');
+  }
+}
 
 // for(let i = 0; i < items.length; i++){
 //   console.log(items[i]);

@@ -92,9 +92,9 @@ h3.active, p.active{
   color: black;
   text-align: center;
   line-height: 30px;
-  position: absolute;
 }
 .box-font-top{
+  position: absolute;
   top: 10px;
   right: 32%;
   transform:translateX(-50%);
@@ -102,6 +102,7 @@ h3.active, p.active{
 
 }
 .box-font-bottom{
+  position: absolute;
   bottom: 10px;
   right: 32%;
   transform:translateX(-50%);
